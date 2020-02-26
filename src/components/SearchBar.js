@@ -10,7 +10,7 @@ class SearchBar extends React.Component{
     onFormSubmit = (event)=>{
         event.preventDefault();
         console.log(this.state.term);     
-        this.props.onSubmit(this.state.term)        
+        this.props.onSubmit(this.state.term);        
 
       /* axios.get('https://api.unsplash.com/search/photos',{
             params:{query: this.state.term},
