@@ -2,9 +2,9 @@ import React from 'react';
 
 const SearchBar=()=>{
     return(
-        <div>
-            <form>
-                <div>
+        <div className = "ui segment">
+            <form className = "ui form">
+                <div className = "field">
                     <label>Search Image</label>
                     <input type ="text"/>
                 </div>
