@@ -4,15 +4,17 @@ import SearchBar from './SearchBar';
 import ImageList from './ImageList';
 
 class App extends React.Component{
-    state = {images: 0}
+    state = {images: []}
  onSearchSubmit = async (term)=>{
 //console.log(term);
 const response   = await unsplash.get('/search/photos',{
         params: {query : term},        
     });
-    console.log(response.data.total);
-    this.setState({images: response.data.total});
-    console.log(this.state.images);
+    console.log(response.data.results);
+    this.setState({images: response.data.results.map((image)=>{
+        return(<img key = {image.id} src={image.urls.regular} alt={image.description}/>)
+    })});
+    console.log(this.state.images);    
 
 }
     
