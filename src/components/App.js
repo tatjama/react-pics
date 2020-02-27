@@ -24,7 +24,7 @@ const response   = await unsplash.get('/search/photos',{
         <div style = {{marginTop: "10px"}} className = "ui container">
         
             <SearchBar onSubmit = {this.onSearchSubmit} />
-            Found {this.state.images} images
+            Found {this.state.images.length} images
             <ImageList/>
         </div>
     );
