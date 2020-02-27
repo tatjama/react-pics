@@ -11,9 +11,10 @@ const response   = await unsplash.get('/search/photos',{
         params: {query : term},        
     });
     console.log(response.data.results);
-    this.setState({images: response.data.results.map((image)=>{
+   /* this.setState({images: response.data.results.map((image)=>{
         return(<img key = {image.id} src={image.urls.regular} alt={image.description}/>)
-    })});
+    })});*/
+    this.setState({images: response.data.results});
     console.log(this.state.images);    
 
 }
@@ -25,7 +26,7 @@ const response   = await unsplash.get('/search/photos',{
         
             <SearchBar onSubmit = {this.onSearchSubmit} />
             Found {this.state.images.length} images
-            <ImageList/>
+            <ImageList images = {this.state.images}/>
         </div>
     );
     }
