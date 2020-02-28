@@ -5,22 +5,19 @@ import ImageList from './ImageList';
 
 class App extends React.Component{
     state = {images: []}
- onSearchSubmit = async (term)=>{
-//console.log(term);
-const response   = await unsplash.get('/search/photos',{
-        params: {query : term},        
-    });
-    console.log(response.data.results);
-   /* this.setState({images: response.data.results.map((image)=>{
-        return(<img key = {image.id} src={image.urls.regular} alt={image.description}/>)
-    })});*/
+ 
+    onSearchSubmit = async (term)=>{
+        const response   = await unsplash.get('/search/photos',{
+                            params: {query : term},        
+        });
+ 
     this.setState({images: response.data.results});
-    console.log(this.state.images);    
+       
 
 }
     
     render(){
-        console.log(this)
+        
     return(
         <div style = {{marginTop: "10px"}} className = "ui container">
         
