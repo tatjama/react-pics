@@ -5,7 +5,7 @@ import ImageCard from './ImageCard';
 
 const ImageList = (props)=>{
 
-    console.log(props.images);
+    //console.log(props.images);
 
     const images = props.images.map((image)=>{
         return(

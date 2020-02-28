@@ -8,19 +8,19 @@ class SearchBar extends React.Component{
 
     onFormSubmit = (event)=>{
         event.preventDefault();
-        console.log(this.state.term);     
+        //console.log(this.state.term);     
         this.props.onSubmit(this.state.term);       
 
     }
 
     onInputChange = (event) =>{        
-        console.log(event.target.value);
+       // console.log(event.target.value);
         this.setState({term:event.target.value});
     }
     
 
     render(){
-        console.log('search bar')
+        
     return(
         <div className = "ui segment">
             <form className = "ui form" onSubmit = {this.onFormSubmit}>
